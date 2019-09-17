@@ -3,41 +3,45 @@
 namespace Peliculas1
 {
   
-    class Pelicula
+   class Pelicula
     {
-        private string titulo, pais, director;
-        private Int16 año;
-        
-        public void settitulo(string t)
-        {
-            titulo=t;
-        }
-      public string gettitulo()
-        {
-        return titulo;
-        }
-        public void setaño(Int16 a)
-        {
-            año=a;
-        }
-      public Int16 getaño()
-        {
-        return año;
-        }
-        
+        private string titulo,titulo2;
+        private int año,año2;
+       
+       public Pelicula()
+       {
+           titulo="Una mente brillante";
+           año=2001;
+           titulo2="Dunkerque";
+           año2=2017;
+       }
+       public Pelicula(string t,string t2, int a, int a2)
+       {
+           titulo=t;
+           titulo2=t2;
+           año=a;
+           año2=a2;
+       }
+       
+
+       public void imprime()
+       {
+           Console.WriteLine("Pelicula 1: {0} {1} Pelicula 2: {2} {3}", titulo, año, titulo2, año2);
+       }
+
+
     }
     class Program
     {
-        static void Main(string[] args)
+         static void Main(string[] args)
         {
-           Pelicula p1 = new Pelicula();
-           Pelicula p2 = new Pelicula();
+            
 
-           p1.settitulo("Una mente brillante");
-           p1.setaño(2001); 
-           p2.settitulo("Dunkerque");
-           p2.setaño(2017);
-    Console.WriteLine("Pelicula 1: {0} {1} Pelicula 2: {2} {3}", p1.gettitulo(), p1.getaño(),p2.gettitulo(),p2.getaño());
+            Pelicula pelicula1=new Pelicula();
+            
+            pelicula1.imprime();
+            
+            
         }
     }
 }
