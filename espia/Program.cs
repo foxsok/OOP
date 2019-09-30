@@ -16,12 +16,7 @@ namespace espia
     }
 
 class Anonymous {
-   public static void anonimiza(Persona p)
-    {
-            p.nombre = "xxxxxxxxxxx";
-            p.apellido = "xxxxxxxxxxx";       
-    }
-
+ 
     public static void cambia(ref Persona p )
       {
           Random rnd = new Random();
@@ -33,12 +28,23 @@ class Anonymous {
 
     class Program
     {
+
+           static void anonimiza(out string nombre)
+    {
+            nombre = "xxxxxxxxxxx";
+            //p.apellido = "xxxxxxxxxxx";       
+    }
+
         static void Main(string[] args)
         {
+
+
+            string a;
          Persona p = new Persona();
          Console.WriteLine(p.nombre);
-         Anonymous.anonimiza(p);
-         Console.WriteLine(p.nombre);
+        // Anonymous.anonimiza(p.nombre);
+        anonimiza(out a);
+         Console.WriteLine( a);
          Anonymous.cambia(ref p);
          Console.WriteLine("Nombre clave: "+p.ran);
          
